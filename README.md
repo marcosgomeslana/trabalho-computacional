@@ -29,7 +29,7 @@
 
 ### Tela Inicial
 
-#### Menu de Navegação
+#### Opções
 
 - Sistema 1 - Revestimentos  
 - Sistema 2 - Corporal  
@@ -71,5 +71,9 @@ if (isNaN(valor) || valor <= 0) {
 
 
 ## Wireframe 
+
+![Tela Inicial do Site](/trabalho-computacional/src/assets/images/home.png)
+
+![Tela de Calculo Corporal do Site](/trabalho-computacional/src/assets/images/calculo-corporal.png)
 
 
