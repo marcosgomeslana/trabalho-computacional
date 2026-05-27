@@ -66,4 +66,10 @@ const valor = Number(input.value);
 
 if (isNaN(valor) || valor <= 0) {
     alert("Digite um valor válido");
-}
+} 
+````
+
+
+## Wireframe 
+
+
