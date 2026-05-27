@@ -72,8 +72,10 @@ if (isNaN(valor) || valor <= 0) {
 
 ## Wireframe 
 
-![Tela Inicial do Site](/trabalho-computacional/src/assets/images/home.png)
+![Tela Inicial do Site](/trabalho-computacional/src/assets/images/<img width="1536" height="1024" alt="home" src="https://github.com/user-attachments/assets/11067474-a081-4540-ab7c-df71665fa65c" />)
 
-![Tela de Calculo Corporal do Site](/trabalho-computacional/src/assets/images/calculo-corporal.png)
+
+![Tela de Calculo Corporal do Site](/trabalho-computacional/src/assets/images/<img width="1536" height="1024" alt="calculo-corporal" src="https://github.com/user-attachments/assets/71bb86b1-ac5a-4bf7-a6e0-ef54bf665186" />)
+
 
 
