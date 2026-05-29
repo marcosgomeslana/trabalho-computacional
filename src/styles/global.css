@@ -1,0 +1,74 @@
+/* 
+   1. VARIÁVEIS GERAIS E RESET
+*/
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --result-bg: #f1f5f9;
+    --icon-orange-bg: #ffedd5;
+    --icon-orange-text: #f97316;
+    --font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 
+   2. CABEÇALHO E NAVEGAÇÃO COMPARTILHADA
+*/
+header, header.topbar {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container, .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.logo-container span, .logo span {
+    color: var(--primary-color);
+}
+
+nav a, .nav-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/*
+   3. RODAPÉ COMPARTILHADO
+*/
+footer {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}

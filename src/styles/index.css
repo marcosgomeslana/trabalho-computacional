@@ -1,0 +1,111 @@
+/*
+   1. ESTRUTURA PRINCIPAL (INDEX)
+*/
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    width: 100%;
+}
+
+/*
+   2. HERO SECTION
+*/
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero-icon {
+    background-color: #e0e7ff;
+    color: var(--primary-color);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem auto;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+}
+
+.hero p {
+    color: var(--text-muted);
+}
+
+/*
+   3. GRID DE CARDS
+*/
+.systems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Cores de fundo específicas para cada ícone */
+.icon-bg-blue { background-color: #e0e7ff; color: #3b82f6; }
+.icon-bg-green { background-color: #dcfce7; color: #22c55e; }
+.icon-bg-orange { background-color: #ffedd5; color: #f97316; }
+.icon-bg-purple { background-color: #f3e8ff; color: #a855f7; }
+
+.card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.btn-acessar {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-acessar:hover {
+    background-color: var(--primary-hover);
+}
