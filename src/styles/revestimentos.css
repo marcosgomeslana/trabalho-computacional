@@ -1,0 +1,271 @@
+/* =============================================
+   revestimentos.css
+   Estilos específicos da página de revestimentos
+   ============================================= */
+
+/* Hero da página */
+.page-hero {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 2rem 0;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.page-hero .hero-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.page-hero h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 4px;
+    color: var(--color-title, #1a1a2e);
+}
+
+.page-hero p {
+    margin: 0;
+    color: var(--color-text-muted, #6b7280);
+    font-size: 0.95rem;
+}
+
+/* Wrapper central */
+.content-wrapper {
+    max-width: 860px;
+    margin: 1.5rem auto 3rem;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Cards */
+.card-form,
+.card-resultados {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    padding: 1.75rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-title, #1a1a2e);
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f0f0f5;
+}
+
+/* Grupos de input */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.group-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #9ca3af;
+    margin: 0 0 0.75rem;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.input-row.three-cols {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-field label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.input-field input {
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #111827;
+    background: #fafafa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.input-field input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+    background: #fff;
+}
+
+.input-field input.erro {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Mensagem de erro */
+.mensagem-erro {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.875rem;
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+/* Botões */
+.btn-group {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.btn-primary {
+    flex: 1;
+    padding: 12px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    padding: 12px 20px;
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #e5e7eb;
+}
+
+/* Grid de resultados */
+.resultados-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.resultado-item {
+    background: #f8f9fb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.resultado-label {
+    font-size: 0.78rem;
+    color: #6b7280;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.resultado-valor {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.2;
+}
+
+.resultado-unidade {
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+/* Destaques */
+.destaque-azul {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.destaque-azul .resultado-label {
+    color: #1d4ed8;
+}
+
+.destaque-azul .resultado-valor {
+    color: #1e40af;
+}
+
+.destaque-verde {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.destaque-verde .resultado-label {
+    color: #15803d;
+}
+
+.destaque-verde .resultado-valor {
+    color: #166534;
+    font-size: 1.4rem;
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+    .content-wrapper {
+        padding: 0 1rem;
+    }
+
+    .card-form,
+    .card-resultados {
+        padding: 1.25rem;
+    }
+
+    .input-row,
+    .input-row.three-cols {
+        grid-template-columns: 1fr;
+    }
+
+    .resultados-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .page-hero {
+        padding: 1.5rem 1rem 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
