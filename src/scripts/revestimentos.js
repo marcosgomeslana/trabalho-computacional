@@ -94,10 +94,10 @@ function calcular() {
     const custoTotal = nCaixas * valores.preco;
 
     // --- Exibir resultados ---
-    resAreaPeca.textContent  = areaPeca.toFixed(4);
+    resAreaPeca.textContent  = areaPeca.toFixed(2);
     resAreaAmb.textContent   = areaAmbiente.toFixed(2);
     resAreaTotal.textContent = areaTotal.toFixed(2);
-    resMetCaixa.textContent  = metCaixa.toFixed(4);
+    resMetCaixa.textContent  = metCaixa.toFixed(2);
     resCaixas.textContent    = nCaixas;
     resCusto.textContent     = custoTotal.toLocaleString("pt-BR", {
         minimumFractionDigits: 2,
