@@ -75,22 +75,22 @@ function limparCampos() {
 }
 
 const bases = [
-    1621,
-    2000,
+    1621.00,
+    2000.00,
     2259.20,
-    2400,
-    2600,
+    2400.00,
+    2600.00,
     2826.65,
-    3000,
-    3400,
+    3000.00,
+    3400.00,
     3751.05,
-    4000,
-    4300,
+    4000.00,
+    4300.00,
     4664.68,
-    6000,
-    10000,
-    20000,
-    30000
+    6000.00,
+    10000.00,
+    20000.00,
+    30000.00
 ];
 
 const valoresIRRF = [
@@ -129,7 +129,12 @@ function desenharGraficoIRRF() {
     new Chart(ctx, {
         type: 'line',
         data: {
-            labels: bases.map(b => `R$ ${b}`),
+            labels: bases.map(
+                b => `R$ ${b.toLocaleString('pt-BR', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                })}`
+            ),
             datasets: [{
                 label: 'IRRF (Base de Cálculo)',
                 data: valoresIRRF,
