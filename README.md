@@ -21,7 +21,7 @@
 - CSS  
 - JavaScript  
 - Chart.js  
-- Vercel  
+- Pages
 
 ---
 
