@@ -19,7 +19,10 @@ function calcularIRRF() {
     const contPrevidenciaria =
         parseFloat(document.getElementById('contPrevidenciaria').value);
 
-    if (isNaN(salarioBruto) || isNaN(numDep) || isNaN(contPrevidenciaria)) {
+    if (isNaN(salarioBruto) ||
+        isNaN(numDep) ||
+        isNaN(contPrevidenciaria)) {
+
         alert('Preencha todos os campos.');
         return;
     }
@@ -62,10 +65,15 @@ function calcularIRRF() {
         irrf = 0;
     }
 
-    resultado.textContent = `R$ ${irrf.toFixed(2)}`;
+    resultado.textContent =
+        `R$ ${irrf.toLocaleString('pt-BR', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })}`;
 
     return irrf;
 }
+
 
 function limparCampos() {
     document.getElementById('salarioBruto').value = '';
@@ -73,6 +81,7 @@ function limparCampos() {
     document.getElementById('contPrevidenciaria').value = '';
     resultado.textContent = '---';
 }
+
 
 const bases = [
     1621.00,
@@ -94,30 +103,26 @@ const bases = [
 ];
 
 const valoresIRRF = [
-    0, // Até R$ 2259.20 é isento 
+    0,
     0,
     0,
 
-    //  (Base calculo * aliquota) - parcelaAdeduzir
-    (2400 * 0.075) - 169.44,
-    (2600 * 0.075) - 169.44,
+    (2400.00 * 0.075) - 169.44,
+    (2600.00 * 0.075) - 169.44,
     (2826.65 * 0.075) - 169.44,
 
-
-    (3000 * 0.15) - 381.44,
-    (3400 * 0.15) - 381.44,
+    (3000.00 * 0.15) - 381.44,
+    (3400.00 * 0.15) - 381.44,
     (3751.05 * 0.15) - 381.44,
 
-
-    (4000 * 0.225) - 662.77,
-    (4300 * 0.225) - 662.77,
+    (4000.00 * 0.225) - 662.77,
+    (4300.00 * 0.225) - 662.77,
     (4664.68 * 0.225) - 662.77,
 
-
-    (6000 * 0.275) - 896.00,
-    (10000 * 0.275) - 896.00,
-    (20000 * 0.275) - 896.00,
-    (30000 * 0.275) - 896.00
+    (6000.00 * 0.275) - 896.00,
+    (10000.00 * 0.275) - 896.00,
+    (20000.00 * 0.275) - 896.00,
+    (30000.00 * 0.275) - 896.00
 ];
 
 function desenharGraficoIRRF() {
@@ -128,42 +133,66 @@ function desenharGraficoIRRF() {
 
     new Chart(ctx, {
         type: 'line',
+
         data: {
             labels: bases.map(
-                b => `R$ ${b.toLocaleString('pt-BR', {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2
-                })}`
+                b => `R$ ${b.toFixed(2)}`
             ),
+
             datasets: [{
                 label: 'IRRF (Base de Cálculo)',
                 data: valoresIRRF,
                 borderColor: 'rgba(177, 96, 230, 0.85)',
-                backgroundColor: 'rgba(177, 96, 230, 0.2)',
+                backgroundColor: 'rgba(177, 96, 230, 0.20)',
                 fill: true,
                 tension: 0.2,
                 pointRadius: 3
             }]
         },
+
         options: {
             responsive: true,
             maintainAspectRatio: false,
+
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            return `IRRF: R$ ${Number(context.raw).toFixed(2)}`;
+                        }
+                    }
+                }
+            },
+
             scales: {
                 x: {
                     title: {
                         display: true,
                         text: 'Base de Cálculo (R$)'
+                    },
+                    ticks: {
+                        autoSkip: false, 
+                        maxRotation: 45,
+                        minRotation: 45
                     }
                 },
+
                 y: {
                     title: {
                         display: true,
                         text: 'IRRF (R$)'
                     },
-                    beginAtZero: true
+                    beginAtZero: true,
+
+                    ticks: {
+                        callback: function (value) {
+                            return `R$ ${Number(value).toFixed(2)}`;
+                        }
+                    }
                 }
             }
         }
     });
 }
+
 desenharGraficoIRRF();
